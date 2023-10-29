@@ -1,0 +1,55 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Collections;
+
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+public class Main {
+    public static void main(String[] args) {
+        LinkedList<Integer> DataLists = new LinkedList<>();
+        Scanner UserScanner = new Scanner(System.in);
+
+        System.out.print("Enter number of elements in array to be need to add in linked list (single): ");
+
+        int ElementsInArray = UserScanner.nextInt();
+
+        for( int i = 1; i <= ElementsInArray; i++)
+        {
+            System.out.print("Enter their values one by one: ");
+            int ValueInArrayList = UserScanner.nextInt();
+            DataLists.add(ValueInArrayList);
+        }
+        System.out.println("Elements in Array List" + DataLists);
+
+        System.out.print("\nWhat position of element you want to insert in Linked List: ");
+        int PositionNewElement = UserScanner.nextInt();
+
+        System.out.print("Enter new Element: ");
+        int AddNewElement = UserScanner.nextInt();
+
+        DataLists.add(PositionNewElement, AddNewElement);
+
+        System.out.println("Updated Linked List (Added)" + DataLists + "\n");
+
+        System.out.print("What position you want to remove elements from the Linked List: ");
+        int RemoveElement = UserScanner.nextInt();
+        DataLists.remove(RemoveElement);
+        System.out.println("Update Linked List (Deleted): " + DataLists);
+
+        System.out.println("Linked List Has been Sorted:");
+        Collections.sort(DataLists);
+        System.out.println(DataLists);
+
+        System.out.print("\nEnter the value to find what position in the Linked List: ");
+        int FindElementPosition = UserScanner.nextInt();
+
+        for(int FindElement = 0; FindElement <= FindElementPosition; FindElement++)
+        {
+            if(FindElementPosition == DataLists.get(FindElement))
+            {
+                System.out.println(FindElementPosition + " is present at location " + FindElement + ".");
+                break;
+            }
+        }
+    }
+}
